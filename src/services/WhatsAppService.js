@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "916375292669"; // Placeholder
+const WHATSAPP_NUMBER = "918738033229"; // Vijay Medical Store
 
 export const sendOrderToWhatsApp = (cartItems, total) => {
   const itemSummary = cartItems

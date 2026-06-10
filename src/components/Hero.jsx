@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   const handleConsult = () => {
-    window.open("https://wa.me/916375292669?text=Hi, I would like to consult with a pharmacist regarding my health.", "_blank");
+    window.open("https://wa.me/918738033229?text=Hi, I would like to consult with a pharmacist regarding my health.", "_blank");
   };
 
   return (

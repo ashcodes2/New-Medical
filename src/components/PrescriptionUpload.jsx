@@ -135,7 +135,7 @@ const PrescriptionUpload = () => {
     if (!uploadedFile) return;
 
     const waText = `Hello! I would like to submit my prescription for review. File name: *${uploadedFile.name}*. Please review and dispatch the medicines. Thank you! 🙏`;
-    const waUrl = `https://wa.me/916375292669?text=${encodeURIComponent(waText)}`;
+    const waUrl = `https://wa.me/918738033229?text=${encodeURIComponent(waText)}`;
 
     /* ── MOBILE: Web Share API → file directly WhatsApp mein ── */
     if (navigator.canShare && navigator.canShare({ files: [uploadedFile] })) {
@@ -290,7 +290,7 @@ const PrescriptionUpload = () => {
               </AnimatePresence>
 
               <button
-                onClick={() => window.open("https://wa.me/916375292669?text=Hello! I would like to submit my prescription for review.", '_blank')}
+                onClick={() => window.open("https://wa.me/918738033229?text=Hello! I would like to submit my prescription for review.", '_blank')}
                 className="bg-white/10 border border-white/20 text-white px-8 py-5 rounded-xl font-black tracking-widest uppercase hover:bg-white/20 transition-all flex items-center justify-center gap-3"
               >
                 <Send className="w-5 h-5" />

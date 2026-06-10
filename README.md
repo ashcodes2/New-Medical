@@ -1,6 +1,6 @@
 # 🏥 Vijay Medical Store — Official Website
 
-A modern, fully responsive medical store website built with **React + Vite**, featuring online prescription upload, WhatsApp ordering, product browsing, and a seamless cart experience.
+A modern, fully responsive medical store website built with **React + Vite**, featuring online prescription upload, WhatsApp ordering, product browsing (16 products), and a seamless cart experience.
 
 ## 🌐 Live Demo
 
@@ -14,12 +14,12 @@ A modern, fully responsive medical store website built with **React + Vite**, fe
 
 ## ✨ Features
 
-- 🛍️ **Product Catalog** — Browse medicines, wellness products & daily essentials
-- 🛒 **Cart System** — Add, update, and remove items with a slide-out cart drawer
+- 🛍️ **Product Catalog** — 16 products: medicines, wellness, baby care, personal care & more
+- 🛒 **Cart System** — Click any product card or the `+` button to add to cart; slide-out cart drawer
 - 📋 **Prescription Upload** — Upload prescription image/PDF and send directly to WhatsApp
   - 📱 **Mobile:** File is shared directly via native share sheet (Web Share API)
   - 💻 **Desktop:** File auto-downloads + WhatsApp Web opens with step-by-step attach guide
-- 💬 **WhatsApp Ordering** — One-click order confirmation sent to the store's WhatsApp
+- 💬 **WhatsApp Ordering** — One-click order confirmation sent to store's WhatsApp
 - 🔍 **Search** — Real-time product search via navbar
 - 📱 **Fully Responsive** — Optimized for mobile, tablet & desktop
 - ⭐ **Testimonials** — Customer reviews carousel
@@ -35,7 +35,7 @@ A modern, fully responsive medical store website built with **React + Vite**, fe
 | Vite | Build Tool & Dev Server |
 | Framer Motion | Animations |
 | Lucide React | Icon Library |
-| Vanilla CSS | Styling |
+| Tailwind CSS v4 | Styling |
 | WhatsApp API | Order & Prescription Delivery |
 | Vercel | Hosting & Deployment |
 
@@ -76,36 +76,38 @@ npm run build
 ```
 src/
 ├── components/
-│   ├── Navbar.jsx          # Navigation + search + cart icon
-│   ├── Hero.jsx            # Landing hero section
-│   ├── DailyEssentials.jsx # Category quick links
-│   ├── ProductGrid.jsx     # Product listing with search filter
-│   ├── CartDrawer.jsx      # Slide-out cart drawer
-│   ├── CartSection.jsx     # Full cart view section
+│   ├── Navbar.jsx              # Navigation + search + cart icon
+│   ├── Hero.jsx                # Landing hero section
+│   ├── DailyEssentials.jsx     # Category quick links
+│   ├── ProductGrid.jsx         # 16 products with search filter & cart
+│   ├── CartDrawer.jsx          # Slide-out cart drawer
+│   ├── CartSection.jsx         # Full cart view section
 │   ├── PrescriptionUpload.jsx  # Prescription upload + WhatsApp send
-│   ├── Footer.jsx          # Footer with policy links
-│   └── PolicyModal.jsx     # Privacy & terms modals
+│   ├── Footer.jsx              # Footer with store info & policy links
+│   └── PolicyModal.jsx         # Privacy & terms modals
 ├── services/
-│   └── WhatsAppService.js  # WhatsApp order message builder
-├── App.jsx                 # Root component
-└── main.jsx               # Entry point
+│   └── WhatsAppService.js      # WhatsApp order message builder
+├── App.jsx                     # Root component
+└── main.jsx                    # Entry point
 ```
 
 ---
 
 ## 📦 Deployment
 
-This project is deployed on **Vercel**. Every push to the `master` branch auto-deploys via Vercel's GitHub integration.
+This project is deployed on **Vercel**. Every push to the `main` branch auto-deploys via Vercel's GitHub integration.
 
 **Live URL:** [https://vijay-medical.vercel.app](https://vijay-medical.vercel.app)
 
 ---
 
-## 📞 Contact
+## 🏪 Store Info
 
 **Vijay Medical Store**  
-WhatsApp: [+91 63752 92669](https://wa.me/916375292669)
+📍 134, Sahjanwa Market, Gorakhpur, Uttar Pradesh — 273209  
+📞 Phone: [8738033229](tel:+918738033229)  
+💬 WhatsApp: [+91 87380 33229](https://wa.me/918738033229)
 
 ---
 
-*Built with ❤️ for Vijay Medical Store*
+*Built with ❤️ for Vijay Medical Store — Serving since 1984*

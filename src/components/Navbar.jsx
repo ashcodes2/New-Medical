@@ -30,7 +30,7 @@ const Navbar = ({ cartCount, onCartClick, onSearchChange }) => {
   };
 
   const handleChat = () => {
-    window.open("https://wa.me/916375292669?text=Hello! I have a question about my medication.", "_blank");
+    window.open("https://wa.me/918738033229?text=Hello! I have a question about my medication.", "_blank");
   };
 
   const navLinks = [

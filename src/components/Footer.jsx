@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Phone, Mail, MessageCircle, ArrowRight, Share2, Globe } from 'lucide-react';
 
 const Footer = ({ onOpenPolicy }) => {
-  const address = "124 Apothecary Lane, Near Medical College Square, Central City, 452001";
+  const address = "134, Sahjanwa Market, Gorakhpur, Uttar Pradesh - 273209";
   
   const handleShare = async () => {
     if (navigator.share) {
@@ -72,13 +72,13 @@ const Footer = ({ onOpenPolicy }) => {
         <div className="space-y-6">
           <h4 className="font-bold text-lg text-[#f1be6e] font-headline">Connect</h4>
           <div className="space-y-4">
-            <a className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300 text-[#fef9ef]/60 hover:text-[#fef9ef]" href="https://wa.me/916375292669">
+            <a className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300 text-[#fef9ef]/60 hover:text-[#fef9ef]" href="https://wa.me/918738033229">
               <MessageCircle className="w-5 h-5 text-[#f1be6e]" />
-              WhatsApp: +91 63752 92669
+              WhatsApp: +91 87380 33229
             </a>
-            <a className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300 text-[#fef9ef]/60 hover:text-[#fef9ef]" href="tel:+91123245678">
+            <a className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300 text-[#fef9ef]/60 hover:text-[#fef9ef]" href="tel:+918738033229">
               <Phone className="w-5 h-5 text-[#f1be6e]" />
-              Phone: 0123-245678
+              Phone: 8738033229
             </a>
             <a className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300 text-[#fef9ef]/60 hover:text-[#fef9ef]" href="mailto:support@vijaymedical.com">
               <Mail className="w-5 h-5 text-[#f1be6e]" />

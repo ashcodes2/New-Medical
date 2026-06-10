@@ -58,7 +58,63 @@ const products = [
     price: 85,
     category: "Cold & Flu",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZPRN9qLPH4tmsFur-PEgUQpzzyOmEXxdlzMRU93sPexKzfd5FhXemHKLvwU-CCqV2UKcCdvqLEqSGpto6lw9r4w7ndcBeKDebsM4K-eSMiDmR_gx_4Sn2pPI6GDBekOAlkDcYg3r3DYCRJ6dAjqocWjwDePpR4QhEDEDboZwE5BaAQ7QQawg7Q4FtcjZFpkiWYHRCriTPOJAFvuEYJQQIKeKJb_IkJ7rv-BXC-0DPrUQ1ypmJbIUlfLUrg2tWTLN-wADMn6ooWjMT"
-  }
+  },
+  {
+    id: 109,
+    name: "Volini Pain Relief Spray 100g",
+    price: 285,
+    category: "Wellness",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAp6DwIXJ-K7ssUoRK0FQGDjUVix6Fgw5mfdlWE9ZKZk97rI_BkEh_1gymtX5oMU26q5S5oah0mbKq7T7geIYTwAnXFam807OzVubPeNXQA_oDcNDOglL4hSfyPFpTYFEzPVceJyRGaB_TejqGWegNhp9654DwYEy2wI01z1B2aFttWvh7udiSILdq66UXqyKx1qWS2m1zLsm7RCJ0GSp_-Ew0tV_CYGTt9YoicMXmeWeOaCywwlENJMSgYgYyPMxv_jqJB5Ps0urex"
+  },
+  {
+    id: 110,
+    name: "Electral ORS Sachet (10pcs)",
+    price: 75,
+    category: "Wellness",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZPRN9qLPH4tmsFur-PEgUQpzzyOmEXxdlzMRU93sPexKzfd5FhXemHKLvwU-CCqV2UKcCdvqLEqSGpto6lw9r4w7ndcBeKDebsM4K-eSMiDmR_gx_4Sn2pPI6GDBekOAlkDcYg3r3DYCRJ6dAjqocWjwDePpR4QhEDEDboZwE5BaAQ7QQawg7Q4FtcjZFpkiWYHRCriTPOJAFvuEYJQQIKeKJb_IkJ7rv-BXC-0DPrUQ1ypmJbIUlfLUrg2tWTLN-wADMn6ooWjMT"
+  },
+  {
+    id: 111,
+    name: "Odomos Mosquito Cream 50g",
+    price: 95,
+    category: "Personal Care",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPuZdGyOHwlhFNCVliUe8qe4YIZEdYjs5pjOspe4UN3TdT9ySFiwEnlpPFlZc9yAIA9UG6qacxzvBYD8_MWM1yROGfQd1SKu4ZcDzGF4_rHRRZmSKY-kJ4WYqYor5GmAuxOXqB_oDkyWeMg781gtX4c3s96_0VL9E5j1Zx_V_zoyjujXoTWA8vB7VC4KABs6uEmhiJHYnLVRpgvNDZ7NWEUen192TKUnYzbE4Z4fUhSj9BHUPsu9B2OTZOuv88zL42TVkd3SicBNqa"
+  },
+  {
+    id: 112,
+    name: "Strepsils Lozenges (16pcs)",
+    price: 65,
+    category: "Cold & Flu",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZPRN9qLPH4tmsFur-PEgUQpzzyOmEXxdlzMRU93sPexKzfd5FhXemHKLvwU-CCqV2UKcCdvqLEqSGpto6lw9r4w7ndcBeKDebsM4K-eSMiDmR_gx_4Sn2pPI6GDBekOAlkDcYg3r3DYCRJ6dAjqocWjwDePpR4QhEDEDboZwE5BaAQ7QQawg7Q4FtcjZFpkiWYHRCriTPOJAFvuEYJQQIKeKJb_IkJ7rv-BXC-0DPrUQ1ypmJbIUlfLUrg2tWTLN-wADMn6ooWjMT"
+  },
+  {
+    id: 113,
+    name: "Himalaya Liv.52 DS 60 Tabs",
+    price: 210,
+    category: "Wellness",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCsCJP3I_Js0pY8FhgiPcIiRxTNCfXDjhV9cA1mazYNthwLNsGJh6OFXExhdjfeIDc7A2d1BZQg8GTmprAoTBDSMUDhPMTRzHgmG-cDrMMl73GIODiVLfX4RFggvZq_6gQ0x6SInY1RtpTisrVzbIWQdKEfoISzx5t71EshJcnCI5ek8lW-U5ikDf4i7EyNgSbmzCz334ahTNnaubpVEQkUicrD0orEdsohKrol5GfvB-RacWECbVfZdSTZCHX6o1aenS89z48mZkhd"
+  },
+  {
+    id: 114,
+    name: "Betadine Antiseptic 100ml",
+    price: 130,
+    category: "Pharmacy",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPuZdGyOHwlhFNCVliUe8qe4YIZEdYjs5pjOspe4UN3TdT9ySFiwEnlpPFlZc9yAIA9UG6qacxzvBYD8_MWM1yROGfQd1SKu4ZcDzGF4_rHRRZmSKY-kJ4WYqYor5GmAuxOXqB_oDkyWeMg781gtX4c3s96_0VL9E5j1Zx_V_zoyjujXoTWA8vB7VC4KABs6uEmhiJHYnLVRpgvNDZ7NWEUen192TKUnYzbE4Z4fUhSj9BHUPsu9B2OTZOuv88zL42TVkd3SicBNqa"
+  },
+  {
+    id: 115,
+    name: "Cetirizine 10mg (10 Tabs)",
+    price: 28,
+    category: "Pharmacy",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZPRN9qLPH4tmsFur-PEgUQpzzyOmEXxdlzMRU93sPexKzfd5FhXemHKLvwU-CCqV2UKcCdvqLEqSGpto6lw9r4w7ndcBeKDebsM4K-eSMiDmR_gx_4Sn2pPI6GDBekOAlkDcYg3r3DYCRJ6dAjqocWjwDePpR4QhEDEDboZwE5BaAQ7QQawg7Q4FtcjZFpkiWYHRCriTPOJAFvuEYJQQIKeKJb_IkJ7rv-BXC-0DPrUQ1ypmJbIUlfLUrg2tWTLN-wADMn6ooWjMT"
+  },
+  {
+    id: 116,
+    name: "Savlon Antiseptic Liquid 200ml",
+    price: 145,
+    category: "Personal Care",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPuZdGyOHwlhFNCVliUe8qe4YIZEdYjs5pjOspe4UN3TdT9ySFiwEnlpPFlZc9yAIA9UG6qacxzvBYD8_MWM1yROGfQd1SKu4ZcDzGF4_rHRRZmSKY-kJ4WYqYor5GmAuxOXqB_oDkyWeMg781gtX4c3s96_0VL9E5j1Zx_V_zoyjujXoTWA8vB7VC4KABs6uEmhiJHYnLVRpgvNDZ7NWEUen192TKUnYzbE4Z4fUhSj9BHUPsu9B2OTZOuv88zL42TVkd3SicBNqa"
+  },
 ];
 
 const ProductGrid = ({ onAddToCart, searchQuery }) => {
@@ -93,13 +149,15 @@ const ProductGrid = ({ onAddToCart, searchQuery }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className="group bg-white rounded-3xl p-5 border border-outline-variant/10 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
+              whileTap={{ scale: 0.97 }}
+              onClick={() => onAddToCart(product)}
+              className="group bg-white rounded-3xl p-5 border border-outline-variant/10 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 cursor-pointer"
             >
               <div className="aspect-square rounded-2xl bg-surface-container overflow-hidden mb-6 relative">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <button 
-                  onClick={() => onAddToCart(product)}
-                  className="absolute bottom-4 right-4 bg-primary-container text-on-primary p-4 rounded-2xl shadow-xl transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 active:scale-90 hover:bg-[#f1be6e] hover:text-primary"
+                  onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
+                  className="absolute bottom-4 right-4 bg-primary-container text-on-primary p-4 rounded-2xl shadow-xl transform translate-y-0 opacity-100 md:translate-y-2 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 active:scale-90 hover:bg-[#f1be6e] hover:text-primary"
                 >
                   <Plus className="w-6 h-6" />
                 </button>
