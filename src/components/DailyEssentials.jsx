@@ -6,26 +6,26 @@ const categories = [
   {
     id: 1,
     name: "Cold & Flu",
-    desc: "Vicks, Honitus, and symptom relief for the whole family.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZPRN9qLPH4tmsFur-PEgUQpzzyOmEXxdlzMRU93sPexKzfd5FhXemHKLvwU-CCqV2UKcCdvqLEqSGpto6lw9r4w7ndcBeKDebsM4K-eSMiDmR_gx_4Sn2pPI6GDBekOAlkDcYg3r3DYCRJ6dAjqocWjwDePpR4QhEDEDboZwE5BaAQ7QQawg7Q4FtcjZFpkiWYHRCriTPOJAFvuEYJQQIKeKJb_IkJ7rv-BXC-0DPrUQ1ypmJbIUlfLUrg2tWTLN-wADMn6ooWjMT"
+    desc: "Vicks, Honitus, Zandu Balm and full symptom relief for the whole family.",
+    image: "/products/cat_cold_flu.png"
   },
   {
     id: 2,
     name: "Baby Care",
-    desc: "Gentle Himalaya and Mamaearth formulations.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCsCJP3I_Js0pY8FhgiPcIiRxTNCfXDjhV9cA1mazYNthwLNsGJh6OFXExhdjfeIDc7A2d1BZQg8GTmprAoTBDSMUDhPMTRzHgmG-cDrMMl73GIODiVLfX4RFggvZq_6gQ0x6SInY1RtpTisrVzbIWQdKEfoISzx5t71EshJcnCI5ek8lW-U5ikDf4i7EyNgSbmzCz334ahTNnaubpVEQkUicrD0orEdsohKrol5GfvB-RacWECbVfZdSTZCHX6o1aenS89z48mZkhd"
+    desc: "Gentle Himalaya, Johnson's and Mamaearth formulations for your little one.",
+    image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&q=80"
   },
   {
     id: 3,
     name: "Wellness",
-    desc: "Chyawanprash, Ashwagandha and immunity boosters.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAp6DwIXJ-K7ssUoRK0FQGDjUVix6Fgw5mfdlWE9ZKZk97rI_BkEh_1gymtX5oMU26q5S5oah0mbKq7T7geIYTwAnXFam807OzVubPeNXQA_oDcNDOglL4hSfyPFpTYFEzPVceJyRGaB_TejqGWegNhp9654DwYEy2wI01z1B2aFttWvh7udiSILdq66UXqyKx1qWS2m1zLsm7RCJ0GSp_-Ew0tV_CYGTt9YoicMXmeWeOaCywwlENJMSgYgYyPMxv_jqJB5Ps0urex"
+    desc: "Chyawanprash, Ashwagandha, multivitamins and immunity boosters.",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&q=80"
   },
   {
     id: 4,
     name: "Personal Care",
-    desc: "Dettol, Lifebuoy and daily hygiene essentials.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPuZdGyOHwlhFNCVliUe8qe4YIZEdYjs5pjOspe4UN3TdT9ySFiwEnlpPFlZc9yAIA9UG6qacxzvBYD8_MWM1yROGfQd1SKu4ZcDzGF4_rHRRZmSKY-kJ4WYqYor5GmAuxOXqB_oDkyWeMg781gtX4c3s96_0VL9E5j1Zx_V_zoyjujXoTWA8vB7VC4KABs6uEmhiJHYnLVRpgvNDZ7NWEUen192TKUnYzbE4Z4fUhSj9BHUPsu9B2OTZOuv88zL42TVkd3SicBNqa"
+    desc: "Dettol, Savlon, Nivea and daily hygiene essentials.",
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&q=80"
   }
 ];
 
