@@ -1,186 +1,234 @@
-import React, { useState } from 'react';
-import { ShoppingBag, Search, FileText, Menu, X, MessageSquare, ArrowRight } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ShoppingBag, Search, FileText, Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import OfferBanner from './OfferBanner';
 
 const Navbar = ({ cartCount, onCartClick, onSearchChange }) => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const searchRef = useRef(null);
 
-  const handleSearchToggle = () => {
-    setIsSearchOpen(!isSearchOpen);
-    if (isSearchOpen) {
-      setSearchValue("");
-      onSearchChange("");
-    }
-  };
+  /* Scroll shadow */
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleSearchInput = (e) => {
     const val = e.target.value;
     setSearchValue(val);
     onSearchChange(val);
-    
-    // Auto-scroll to results if searching
     if (val.length > 0) {
-      const element = document.getElementById('medicines');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      document.getElementById('medicines')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  const handleChat = () => {
-    window.open("https://wa.me/918738033229?text=Hello! I have a question about my medication.", "_blank");
+  const clearSearch = () => {
+    setSearchValue('');
+    onSearchChange('');
+    searchRef.current?.focus();
   };
 
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   const navLinks = [
-    { name: "Pharmacy", href: "#medicines" },
-    { name: "Wellness", href: "#wellness" },
-    { name: "Prescription", href: "#prescription" },
-    { name: "Contact", href: "#footer" }
+    { name: 'Home',         href: '#home' },
+    { name: 'Medicines',    href: '#medicines' },
+    { name: 'Prescription', href: '#prescription' },
+    { name: 'Contact',      href: '#footer' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-md shadow-[0_32px_64px_-15px_rgba(29,28,22,0.06)]">
-      <nav className="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto font-headline tracking-tight font-semibold">
-        <div className="text-2xl font-bold tracking-tighter text-primary-container">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md transition-shadow duration-300 ${
+        isScrolled ? 'shadow-[0_4px_24px_-4px_rgba(0,28,25,0.12)]' : ''
+      }`}
+    >
+      <OfferBanner />
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
+        className="flex items-center justify-between w-full px-6 py-3.5 max-w-screen-2xl mx-auto gap-4"
+      >
+        {/* ── Brand ── */}
+        <a
+          href="#home"
+          className="text-xl font-black tracking-tighter text-primary-container font-headline flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
+          aria-label="Vijay Medical Store — go to homepage"
+        >
           Vijay Medical Store
-        </div>
+        </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(link => (
-            <a 
+        {/* ── Desktop Nav links ── */}
+        <div className="hidden md:flex items-center gap-7">
+          {navLinks.map((link) => (
+            <a
               key={link.name}
-              className="text-primary/70 hover:text-primary transition-all hover:border-b-2 border-tertiary-fixed-dim" 
               href={link.href}
+              className="text-sm font-semibold text-primary/70 hover:text-primary transition-colors hover:underline underline-offset-4 decoration-tertiary-fixed-dim focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
             >
               {link.name}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-4 lg:gap-6">
-          <div className="relative flex items-center">
-            <AnimatePresence>
-              {isSearchOpen && (
-                <motion.div
-                  initial={{ width: 0, opacity: 0 }}
-                  animate={{ width: 280, opacity: 1 }}
-                  exit={{ width: 0, opacity: 0 }}
-                  className="relative overflow-hidden"
-                >
-                  <input
-                    type="text"
-                    value={searchValue}
-                    placeholder="Search medicines, wellness..."
-                    className="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary-fixed-dim outline-none text-primary"
-                    onChange={handleSearchInput}
-                    autoFocus
-                  />
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-on-surface-variant/40" />
-                  {searchValue && (
-                    <button 
-                      onClick={() => { setSearchValue(""); onSearchChange(""); }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:bg-surface-container rounded-full"
-                    >
-                      <X className="w-3 h-3 text-on-surface-variant" />
-                    </button>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-            {!isSearchOpen && (
-              <button 
-                onClick={handleSearchToggle}
-                className="hover:bg-surface-container-high rounded-full transition-colors p-2 flex items-center"
-              >
-                <Search className="w-5 h-5 text-primary" />
-              </button>
-            )}
-            {isSearchOpen && (
-              <button 
-                onClick={handleSearchToggle}
-                className="ml-2 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
-              >
-                CLOSE
-              </button>
-            )}
-          </div>
+        {/* ── Search bar (always visible on desktop) ── */}
+        <div className="hidden md:flex flex-1 max-w-xs relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-on-surface-variant/50 pointer-events-none" />
+          <input
+            ref={searchRef}
+            type="search"
+            value={searchValue}
+            onChange={handleSearchInput}
+            placeholder="Search medicines, strips…"
+            aria-label="Search medicines"
+            className="w-full bg-surface-container-low border border-outline-variant/20 rounded-full pl-9 pr-8 py-2 text-sm focus:ring-2 focus:ring-primary-fixed-dim outline-none text-primary placeholder:text-on-surface-variant/40 transition-shadow"
+          />
+          {searchValue && (
+            <button
+              onClick={clearSearch}
+              aria-label="Clear search"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-surface-container rounded-full transition-colors"
+            >
+              <X className="w-3.5 h-3.5 text-on-surface-variant" />
+            </button>
+          )}
+        </div>
 
-          <button 
+        {/* ── Right actions ── */}
+        <div className="flex items-center gap-3">
+
+          {/* Phone number — desktop only */}
+          <a
+            href="tel:+918738033229"
+            aria-label="Call Vijay Medical Store"
+            className="hidden lg:flex items-center gap-2 text-sm font-bold text-primary/80 hover:text-primary transition-colors group"
+          >
+            <div className="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center group-hover:bg-primary-container/40 transition-colors">
+              <Phone className="w-4 h-4 text-tertiary-fixed-dim" />
+            </div>
+            <span className="tracking-tight">+91 87380 33229</span>
+          </a>
+
+          {/* Cart */}
+          <button
+            id="cart-button"
             onClick={onCartClick}
-            className="hover:bg-surface-container-high rounded-full transition-colors p-2 flex items-center relative"
+            aria-label={`Open cart — ${cartCount} items`}
+            className="relative p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-surface-container-high rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <ShoppingBag className="w-5 h-5 text-primary" />
-            {cartCount > 0 && (
-              <motion.span 
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                className="absolute top-0 right-0 bg-tertiary-fixed-dim text-primary text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold"
-              >
-                {cartCount}
-              </motion.span>
-            )}
+            <AnimatePresence>
+              {cartCount > 0 && (
+                <motion.span
+                  key={cartCount}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  className="absolute top-0.5 right-0.5 bg-tertiary-fixed-dim text-primary text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-black"
+                >
+                  {cartCount > 9 ? '9+' : cartCount}
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
 
-          <button 
-            onClick={handleChat}
-            className="hidden lg:flex items-center gap-2 text-primary/70 hover:text-primary transition-all"
-          >
-            <MessageSquare className="w-5 h-5" />
-            <span className="text-sm">Chat</span>
-          </button>
-
-          <a 
-            className="hidden lg:flex bg-primary-container text-on-primary px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide scale-100 hover:scale-[1.02] active:scale-95 transition-all items-center gap-2 border border-tertiary-fixed-dim/20" 
+          {/* Upload prescription CTA — desktop */}
+          <a
+            id="navbar-prescription-cta"
             href="#prescription"
+            className="hidden lg:flex items-center gap-2 bg-primary-container text-on-primary px-5 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:scale-[1.02] active:scale-95 transition-all border border-tertiary-fixed-dim/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <FileText className="w-4 h-4 text-tertiary-fixed-dim" />
-            UPLOAD PRESCRIPTION
+            Upload Rx
           </a>
-          
-          <button 
+
+          {/* Mobile hamburger — 44×44px touch target */}
+          <button
+            id="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 hover:bg-surface-container-high rounded-lg transition-colors"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+            className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-surface-container-high rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className="w-6 h-6 text-primary" />}
+            <AnimatePresence mode="wait">
+              {isMobileMenuOpen
+                ? <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}><X className="w-6 h-6 text-primary" /></motion.span>
+                : <motion.span key="m" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}><Menu className="w-6 h-6 text-primary" /></motion.span>
+              }
+            </AnimatePresence>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* ── Mobile search bar ── */}
+      <div className="md:hidden px-4 pb-3 relative">
+        <Search className="absolute left-7 top-1/2 -translate-y-1/2 w-4 h-4 text-on-surface-variant/50 pointer-events-none" />
+        <input
+          type="search"
+          value={searchValue}
+          onChange={handleSearchInput}
+          placeholder="Search medicines, strips…"
+          aria-label="Search medicines"
+          className="w-full bg-surface-container-low border border-outline-variant/20 rounded-full pl-9 pr-8 py-2.5 text-sm focus:ring-2 focus:ring-primary-fixed-dim outline-none text-primary placeholder:text-on-surface-variant/40"
+        />
+        {searchValue && (
+          <button
+            onClick={clearSearch}
+            aria-label="Clear search"
+            className="absolute right-7 top-1/2 -translate-y-1/2 p-1 hover:bg-surface-container rounded-full"
+          >
+            <X className="w-3.5 h-3.5 text-on-surface-variant" />
+          </button>
+        )}
+      </div>
+
+      {/* ── Mobile full-screen menu ── */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="md:hidden bg-surface border-t border-outline-variant/10 overflow-hidden"
           >
-            <div className="flex flex-col p-6 gap-4">
-              {navLinks.map(link => (
-                <a 
+            <div className="flex flex-col p-6 gap-2">
+              {navLinks.map((link) => (
+                <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold text-primary py-2 border-b border-outline-variant/5"
+                  onClick={closeMobileMenu}
+                  className="text-xl font-bold text-primary py-3 px-4 rounded-xl hover:bg-surface-container transition-colors min-h-[52px] flex items-center"
                 >
                   {link.name}
                 </a>
               ))}
-              <button 
-                onClick={handleChat}
-                className="flex items-center gap-3 text-primary font-bold py-2"
+
+              {/* Divider */}
+              <div className="h-px bg-outline-variant/10 my-2" />
+
+              {/* Phone CTA */}
+              <a
+                href="tel:+918738033229"
+                onClick={closeMobileMenu}
+                className="flex items-center gap-3 text-primary font-bold py-3 px-4 rounded-xl hover:bg-surface-container transition-colors min-h-[52px]"
               >
-                <MessageSquare className="w-5 h-5" />
-                Chat with Pharmacist
-              </button>
-              <a 
+                <div className="w-9 h-9 rounded-full bg-primary-container/20 flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-tertiary-fixed-dim" />
+                </div>
+                +91 87380 33229
+              </a>
+
+              {/* Upload prescription */}
+              <a
                 href="#prescription"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-primary-container text-on-primary text-center py-4 rounded-xl font-bold mt-4"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-center gap-2 bg-primary-container text-on-primary text-center py-4 rounded-xl font-bold mt-2 min-h-[52px] hover:opacity-90 transition-opacity"
               >
+                <FileText className="w-5 h-5 text-tertiary-fixed-dim" />
                 Upload Prescription
               </a>
             </div>

@@ -54,10 +54,15 @@
   --font-label: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 16px; /* WCAG AA: minimum readable base size */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -102,4 +107,32 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Keyboard focus ring — WCAG AA accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-tertiary-fixed-dim);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Touch targets — minimum 44×44px on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+  }
+}
+
+/* ── Scrolling marquee animation (OfferBanner) ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
